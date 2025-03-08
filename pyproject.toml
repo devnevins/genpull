@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+metadata-version = "2.4"
+name = "genpull"
+dynamic = ["version"]
+genpull-cli = "genpull:cli"
+summary = "CLI for generating a LaTeX file based upon your League of Comic Geeks exported pulls."
+authors = [
+  {name = "Dean Nevins", email = "dnevins@example.com"},
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "jinja2>3.0.0",
+  "typer>0.15",
+  "xlrd>=2.0.1",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+keywords = ["comics", "comic geeks", "locg"]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.12",
+]
+
+[project.scripts]
+genpull = "genpull.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/devnevins/genpull"
+Issues = "https://github.com/devnevins/genpull/issues"
+
+[tool.hatch.version]
+path = "src/genpull/__about__.py"
+

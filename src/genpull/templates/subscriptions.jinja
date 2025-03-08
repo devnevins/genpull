@@ -1,0 +1,42 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[nocheck]{fancyhdr}
+\usepackage[none]{hyphenat}
+\usepackage{xcolor}
+\usepackage[margin=2cm]{geometry}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage{lastpage}
+\usepackage[all]{nowidow}
+\setlength{\columnsep}{0.125in}
+\pagestyle{fancy}
+\fancyhead[L]{\thepage{} of \pageref{LastPage}}
+\fancyhead[C]{}
+\fancyhead[R]{<VSTART>date<VEND> <VSTART>username<VEND> Subscription List}
+\fancyfoot[L,C,R]{}
+\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+
+\begin{center}
+    COMIC SERIES (<VSTART>num_comics<VEND> titles)
+\end{center}
+
+\begin{multicols}{2}
+{
+\raggedright
+
+<BSTART> for company in sorted_subscriptions <BEND>
+  \textbf{<VSTART>company<VEND>}
+  \begin{itemize}<BSTART> for title in subscriptions[company] <BEND>
+    \item <VSTART>title<VEND><BSTART> endfor <BEND>
+  \end{itemize}
+<BSTART> endfor <BEND>
+}
+
+\end{multicols}
+
+\begin{tcolorbox}[title=Subscription List Key]
+    The list of comics above is my active subscription list. Comics from this list can show up on my pull list depending upon the week. Note that this is comics only. Graphic novels are ordered separately. 
+\end{tcolorbox}
+\end{document}
