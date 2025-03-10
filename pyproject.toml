@@ -8,6 +8,7 @@ name = "genpull"
 dynamic = ["version"]
 genpull-cli = "genpull:cli"
 summary = "CLI for generating a LaTeX file based upon your League of Comic Geeks exported pulls."
+description = "CLI for generating a LaTeX file based upon your League of Comic Geeks exported pulls."
 authors = [
   {name = "Dean Nevins", email = "dnevins@example.com"},
 ]
