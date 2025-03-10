@@ -6,31 +6,40 @@
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # genpull
-# Foobar
+This creates a LaTeX file from the League of Comic Geeks export function. This LaTeX file will
+generate a PDF subscription list that can be sent to your local comic book shop. There are some
+stores that want both a connection to the League of Comic Geeks and a "paper" subscription list.
 
-Foobar is a Python library for dealing with word pluralization.
+This is also useful for having a PDF on your phone to track your overall subscriptions. I've used
+this when I need to remember if a comic that's appeared in my pull is a recommendation or not.
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use pip to install this from PyPI.
 
 ```bash
-pip install foobar
+pip install genpull
 ```
 
 ## Usage
 
-```python
-import foobar
+```
+Usage: genpull [OPTIONS] [INFILENAME]
+```
 
-# returns 'words'
-foobar.pluralize('word')
+### Arguments
+```
+infilename      [INFILENAME]  The League of Comic Geeks Export Pulls xls filename. [default: Pulls-ComicGeeks.xls]
+```
 
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
+### Options
+```
+--debug   --no-debug          Show debugging information. (lots of output) [default: no-debug]
+--output                TEXT  Name of LaTeX output file. [default: None]
+--username              TEXT  Name of subscription list owner. [default: Nevins]
+--install-completion          Install completion for the current shell.
+--show-completion             Show completion for the current shell, to copy it or customize the installation.
+--help                        Show this message and exit.        
 ```
 
 ## Contributing
@@ -38,8 +47,6 @@ foobar.singularize('phenomena')
 Pull requests are welcome. For major changes, please open an issue first
 to discuss what you would like to change.
 
-Please make sure to update tests as appropriate.
-
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+[Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/)
