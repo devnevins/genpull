@@ -21,8 +21,27 @@ Use pip to install this from PyPI.
 pip install genpull
 ```
 
-## Usage
+## How to Use genpull
+Export a subscription list (in old Excel format) by going to League of Comic Geeks' Subscriptions 
+page and selecting "Export Pulls" underneath the gear icon on the right side. Save that file which 
+is referred to below as INFILENAME.
 
+From the terminal, go to the directory that contains your saved INFILENAME file and run genpull 
+using the command and format below. The simplest case is:
+```
+genpull --username "Your Name" --output "subscriptions.tex" INFILENAME
+```
+
+This will generate the LaTeX file and create the subscriptions.tex file. If you omit the output
+option this will print the generated file to the terminal. You can use a redirect if you prefer.
+```
+genpull --username "Your Name" INFILENAME > subscriptions.tex
+```
+
+Take this LaTeX file and typeset it twice to generate the PDF. It needs to be
+done twice because there are page numbers that appear.
+
+## genpull Format
 ```
 Usage: genpull [OPTIONS] [INFILENAME]
 ```
