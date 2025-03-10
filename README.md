@@ -1,4 +1,4 @@
-![pylint Score](./10.svg)
+![pylint Score](https://mperlet.github.io/pybadge/badges/10.svg)
 ![PyPI - Version](https://img.shields.io/pypi/v/genpull)
 ![GitHub Release](https://img.shields.io/github/v/release/devnevins/genpull)
 ![GitHub Tag](https://img.shields.io/github/v/tag/devnevins/genpull)
