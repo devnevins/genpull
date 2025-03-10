@@ -36,3 +36,8 @@ Issues = "https://github.com/devnevins/genpull/issues"
 [tool.hatch.version]
 path = "src/genpull/__about__.py"
 
+[tool.pylint.design]
+# Maximum number of locals for function / method body. Default is 15 but I need
+# to make this larger due to my use of Annotations. I only have four local
+max-locals = 20
+

@@ -1,6 +1,8 @@
-# Code for escaping Latex code so I can write it out.
-# Taken (under the MIT license) from:
-# https://github.com/leonzalion-archives/tex-escape
+"""Module for escaping Latex code so I can write it out.
+
+    Taken (under the MIT license) from:
+        https://github.com/leonzalion-archives/tex-escape
+"""
 import re
 
 def tex_escape(text):
@@ -22,5 +24,6 @@ def tex_escape(text):
         '<': r'\textless{}',
         '>': r'\textgreater{}',
     }
-    regex = re.compile('|'.join(re.escape(str(key)) for key in sorted(conv.keys(), key = lambda item: - len(item))))
+    regex = re.compile('|'.join(re.escape(str(key)) for key in sorted(conv.keys(),
+        key = lambda item: - len(item))))
     return regex.sub(lambda match: conv[match.group()], text)
