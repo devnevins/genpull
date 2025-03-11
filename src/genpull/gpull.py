@@ -5,6 +5,7 @@
   created.
 """
 import logging
+import sys
 from datetime import date
 
 import typer
@@ -14,6 +15,7 @@ from xlrd import XLRDError
 from typing_extensions import Annotated
 from jinja2 import Environment, PackageLoader, select_autoescape
 from .tex_escape import tex_escape
+from .__about__ import __version__
 
 env = Environment(
     loader=PackageLoader("genpull"),
@@ -50,6 +52,8 @@ def strip_dates(date_str: str) -> str:
 def gpull(
     debug: Annotated[bool, typer.Option(help=
         "Show debugging information. (lots of output)")] = False,
+    version: Annotated[bool, typer.Option(help=
+        f"Shows the version of {__name__.split(".", maxsplit=1)[0]}")] = False,
     infilename: Annotated[str, typer.Argument(help=
         "The League of Comic Geeks Export Pulls xls filename.")] = 
         "Pulls-ComicGeeks.xls",
@@ -74,6 +78,11 @@ def gpull(
     """
     if debug:
         logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.DEBUG)
+        logging.debug("%s Version: %s", __name__.split(".", maxsplit=1)[0], __version__)
+
+    if version and not debug:
+        print(f"{__name__.split(".", maxsplit=1)[0]} Version: {__version__}")
+        sys.exit()
 
     try:
         subscriptions = {}

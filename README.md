@@ -20,6 +20,13 @@ Use pip to install this from PyPI.
 pip install genpull
 ```
 
+You can also run genpull using [pipx](https://pipx.pypa.io/stable/). The command below runs genpull
+and shows all of the options.
+
+```bash
+pipx run genpull --help
+```
+
 ## How to Use genpull
 Export a subscription list (in old Excel format) by going to League of Comic Geeks' Subscriptions 
 page and selecting "Export Pulls" underneath the gear icon on the right side. Save that file which 
@@ -53,6 +60,7 @@ infilename      [INFILENAME]  The League of Comic Geeks Export Pulls xls filenam
 ### Options
 ```
 --debug   --no-debug          Show debugging information. (lots of output) [default: no-debug]
+--version --no-version        Shows the version of genpull [default: no-version]     
 --output                TEXT  Name of LaTeX output file. [default: None]
 --username              TEXT  Name of subscription list owner. [default: Nevins]
 --install-completion          Install completion for the current shell.
@@ -62,8 +70,8 @@ infilename      [INFILENAME]  The League of Comic Geeks Export Pulls xls filenam
 
 ## Contributing
 
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would
+like to change.
 
 ## License
 
