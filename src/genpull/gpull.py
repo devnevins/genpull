@@ -105,7 +105,7 @@ def gpull(
             logging.debug("%s, %s", strip_dates(row[0].value), row[1].value)
             if row[1].value not in subscriptions:
                 subscriptions[tex_escape(row[1].value)] = []
-            subscriptions[row[1].value].append(tex_escape(strip_dates(row[0].value)))
+            subscriptions[tex_escape(row[1].value)].append(tex_escape(strip_dates(row[0].value)))
             num_comics += 1
 
         # Sort the Company names
